@@ -8,12 +8,12 @@ body {
 }
 a {
   text-decoration: none;
-  color: inherit;
 }
 
 /* HEADER */
 header {
   height: 100vh;
+  width: 100%;
 }
 header .header-main {
   background: linear-gradient(
@@ -25,16 +25,25 @@ header .header-main {
 
 /* NAVBAR */
 nav {
+  height: 10vh;
+  width: 100%;
+  color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 3.5rem;
+  gap: 1rem;
+  padding: 2rem 4rem;
+  position: fixed;
+  top: 0;
   font-size: 0.875rem;
   font-weight: 500;
 }
 nav .logo {
   font-size: 1.25rem;
   font-weight: 700;
+}
+nav a {
+  color: black;
 }
 nav a:hover {
   text-decoration: underline;
@@ -66,4 +75,105 @@ nav .nav-btns .signup-btn {
   padding: 0.8rem 1.5rem;
   color: white;
   background-color: rgba(79, 70, 186, 1);
+}
+nav .nav-btns .signup-btn:hover {
+  text-decoration: none;
+  background-color: rgb(68, 60, 159);
+}
+
+/* HERO SECTION */
+header .hero {
+  height: 89vh;
+  padding: 4rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5rem;
+  position: relative;
+}
+.hero-decorations .dec-1 {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+}
+.hero-decorations .dec-2 {
+  position: absolute;
+  top: 10rem;
+  right: 0;
+}
+.hero-decorations .dec-3 {
+  position: absolute;
+  bottom: -10rem;
+  right: -0.5rem;
+}
+header .hero .hero-content {
+  width: 45%;
+  padding-top: 4rem;
+  position: relative;
+  z-index: 1;
+}
+.hero-content h1 {
+  /* font-size: 2rem; */
+  /* line-height: 4rem; */
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+header .hero .hero-content .hero-para {
+  max-width: 70%;
+  line-height: 1.5rem;
+}
+header .hero .hero-img {
+  height: auto;
+  width: 30%;
+  padding-top: 6rem;
+  position: absolute;
+  bottom: -8rem;
+  right: 16rem;
+  z-index: 0;
+}
+
+.hero .hero-btns {
+  margin-top: 2rem;
+}
+.hero .hero-btns .get-started-btn {
+  padding: 0.8rem 1.5rem;
+  color: white;
+  background-color: rgb(56, 52, 168);
+  margin-right: 2rem;
+  border-radius: 35px;
+}
+.hero .hero-btns .play-btn {
+  color: rgb(56, 52, 168);
+}
+.hero .hero-btns .play-btn img {
+  width: 3rem;
+  vertical-align: middle;
+}
+header .hero .badges {
+  display: flex;
+  justify-content: start;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+header .hero .badges .badge {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  color: rgb(117, 112, 149);
+}
+header .hero .badges div img {
+  vertical-align: middle;
+}
+@media (min-width: 1054px) {
+  .hero h1 {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+}
+
+/* COMPANIES SECTION */
+header .companies p {
+  text-align: center;
+  padding: 2rem;
 }
