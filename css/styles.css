@@ -168,14 +168,14 @@ header .hero .badges div img {
 
 /* COMPANIES SECTION */
 .companies {
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
   height: 18vh;
   width: 100%;
   background-color: #f5f6f8;
-}
-header .companies p {
-  text-align: center;
-  padding: 0.5rem;
 }
 header .companies .comp-logos img {
   width: 7rem;
@@ -232,14 +232,17 @@ p {
 .portfolio-track .section-header div {
   max-width: 40%;
 }
-.portfolio-track .section-header blockquote {
-  max-width: 35%;
+.section-header .testimonial {
+  width: 35%;
+}
+.testimonial {
   background-color: rgb(232, 234, 237);
   border-radius: 20px;
   padding: 1.5rem;
   position: relative;
 }
-.portfolio-track .section-header blockquote img {
+.testimonial img {
+  width: 3rem;
   position: absolute;
   top: -1.3rem;
   left: 1.5rem;
@@ -278,13 +281,42 @@ p {
 .track-payments img {
   width: 55%;
 }
-.track-payments p:nth-child(1){
+.track-payments p:nth-child(1) {
   color: rgb(56, 52, 168);
 }
-.track-payments hr{
+.track-payments hr {
   margin: 2rem 0;
 }
-.track-payments ul{
-  list-style: url('../assets/icons/orange-tick.svg') inside;
-  vertical-align: text-bottom;
+.track-payments ul {
+  list-style: none;
+}
+.track-payments ul li::before {
+  content: url("../assets/icons/orange-tick.svg");
+}
+.track-payments ul li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  line-height: 1.5rem;
+}
+
+/* SAVE MONEY */
+.save-money {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 4rem;
+}
+.save-money-content {
+  width: 45%;
+}
+.save-money .save-money-img  {
+  width: 45%;
+}
+.save-money p:nth-child(1) {
+  color: rgb(56, 52, 168);
+}
+.save-money .testimonial{
+  margin: 2rem 0;
+  width: 100%;
 }
