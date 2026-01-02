@@ -143,6 +143,9 @@ header .hero .hero-img {
   margin-right: 2rem;
   border-radius: 35px;
 }
+.hero .hero-btns .get-started-btn:hover {
+  transform: scale(1.05);
+}
 .hero .hero-btns .play-btn {
   color: rgb(56, 52, 168);
 }
@@ -156,14 +159,20 @@ header .hero .badges {
   gap: 1.5rem;
   margin-top: 2rem;
 }
-header .hero .badges .badge {
-  display: flex;
-  gap: 0.4rem;
-  align-items: center;
-  color: rgb(117, 112, 149);
+header .hero .badges p{
+  color: rgb(116, 111, 148);
+  padding-left: 1.5rem;
+  position: relative;
 }
-header .hero .badges div img {
-  vertical-align: middle;
+header .hero .badges p::before{
+  content: "";
+  background: url("../assets/icons/tick.svg") no-repeat;
+  background-size: contain;
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  top: 15%;
+  left: 0;
 }
 
 /* COMPANIES SECTION */
@@ -291,14 +300,21 @@ p {
 .track-payments ul {
   list-style: none;
 }
-.track-payments ul li::before {
-  content: url("../assets/icons/orange-tick.svg");
-}
 .track-payments ul li {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  line-height: 1.5rem;
+  position: relative;
+  padding-left: 1.7rem;
+  line-height: 2.3rem;
+}
+.track-payments ul li::before {
+  content: "";
+  background: url("../assets/icons/orange-tick.svg") no-repeat;
+  background-size: contain;
+  width:1.2rem;
+  height: 1rem;
+  position: absolute;
+  top: 26%;
+  left: 0;
+  display: block;
 }
 
 /* SAVE MONEY */
@@ -443,7 +459,7 @@ p {
   background-color: white;
   padding: 1.7rem;
 }
-.blog-content p{
+.blog-content p {
   font-weight: 600;
 }
 
@@ -459,8 +475,170 @@ p {
   width: 35%;
   position: relative;
 }
-.blogs .other-blogs .other-blog img{
+.blogs .other-blogs .other-blog img {
   width: 100%;
   position: absolute;
   bottom: 0;
+}
+
+/* FAQs */
+.faqs {
+  padding: 4rem;
+}
+.faqs .faqs-content {
+  padding: 2rem;
+  height: 85vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.faqs .faqs-content h3 {
+  font-size: 1.15rem;
+}
+.faqs-main {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+}
+.faqs-main .faq {
+  width: 100%;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border: 2px solid rgb(232, 234, 237);
+  border-radius: 10px;
+  position: relative;
+}
+.faqs-main .faq img {
+  position: absolute;
+  top: 1.6rem;
+  right: 1rem;
+}
+
+.more-faqs {
+  background-color: white;
+  width: 33%;
+  height: 80%;
+  border: 2px solid rgb(232, 234, 237);
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.more-faqs-content {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.more-faqs-content p {
+  font-weight: 500;
+}
+.more-faqs-btn {
+  background-color: rgb(255, 127, 92);
+  color: white;
+  padding: 1.1rem 4rem;
+}
+
+/* CTA */
+.cta {
+  height: 60vh;
+  margin: 4rem;
+  background: url("../assets/cta-bg.png") no-repeat scroll;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.cta h2 {
+  max-width: 60%;
+  text-align: center;
+}
+.cta .cta-btn {
+  background-color: rgb(255, 127, 92);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  color: white;
+}
+
+/* FOOTER */
+footer {
+  padding: 4rem;
+}
+footer h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 2rem;
+}
+.footer-main .profile p {
+  color: rgb(116, 111, 148);
+}
+.footer-main .profile .social-medias {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-main a {
+  color: black;
+}
+.footer-main a:hover {
+  text-decoration: underline;
+}
+
+.footer-main .company .company-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.footer-main .resources .resources-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.subscribe form{
+  display: flex;
+  align-items: center;
+}
+.footer-main .subscribe input {
+  padding: 1rem;
+  background-color: rgb(237, 237, 255);
+  border: none;
+}
+.footer-main .subscribe label {
+  background-color: rgb(56, 52, 168);
+  color: white;
+  padding: 0.8rem 1.5rem;
+}
+.footer-main .subscribe label:hover {
+  cursor: pointer;
+  background-color: rgb(46, 42, 138);
+}
+.footer-main .subscribe p {
+  color: rgb(138, 136, 153);
+}
+footer hr {
+  margin: 3rem 0;
+}
+footer .copyright {
+  text-align: center;
 }
