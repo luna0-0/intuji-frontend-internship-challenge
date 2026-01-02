@@ -125,7 +125,7 @@ header .hero .hero-content .hero-para {
   line-height: 1.5rem;
 }
 header .hero .hero-img {
-  height: auto;
+  /* height: 0%; */
   width: 30%;
   position: absolute;
   bottom: -10rem;
@@ -159,12 +159,12 @@ header .hero .badges {
   gap: 1.5rem;
   margin-top: 2rem;
 }
-header .hero .badges p{
+header .hero .badges p {
   color: rgb(116, 111, 148);
   padding-left: 1.5rem;
   position: relative;
 }
-header .hero .badges p::before{
+header .hero .badges p::before {
   content: "";
   background: url("../assets/icons/tick.svg") no-repeat;
   background-size: contain;
@@ -309,7 +309,7 @@ p {
   content: "";
   background: url("../assets/icons/orange-tick.svg") no-repeat;
   background-size: contain;
-  width:1.2rem;
+  width: 1.2rem;
   height: 1rem;
   position: absolute;
   top: 26%;
@@ -603,6 +603,9 @@ footer h3 {
 .footer-main a:hover {
   text-decoration: underline;
 }
+.footer-main>div{
+  max-width: 20%;
+}
 
 .footer-main .company .company-details {
   display: flex;
@@ -615,7 +618,7 @@ footer h3 {
   gap: 1rem;
 }
 
-.subscribe form{
+.subscribe form {
   display: flex;
   align-items: center;
 }
@@ -632,6 +635,9 @@ footer h3 {
 .footer-main .subscribe label:hover {
   cursor: pointer;
   background-color: rgb(46, 42, 138);
+}
+.footer-main .subscribe {
+  max-width: 30%;
 }
 .footer-main .subscribe p {
   color: rgb(138, 136, 153);
