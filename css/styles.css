@@ -7,6 +7,7 @@ body {
   font-family: "Manrope", Arial, sans-serif;
   font-size: 1rem;
   background-color: rgb(250, 251, 255);
+  outline: 2px solid red;
 }
 a {
   text-decoration: none;
@@ -18,9 +19,6 @@ header {
   width: 100%;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-}
-header .header-main {
   background: linear-gradient(
     135deg,
     rgba(201, 231, 242, 1) 40%,
@@ -37,6 +35,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
   padding: 2rem 4rem;
   font-size: 0.875rem;
   font-weight: 500;
@@ -125,7 +124,6 @@ header .hero .hero-content .hero-para {
   line-height: 1.5rem;
 }
 header .hero .hero-img {
-  /* height: 0%; */
   width: 30%;
   position: absolute;
   bottom: -10rem;
@@ -139,15 +137,19 @@ header .hero .hero-img {
 .hero .hero-btns .get-started-btn {
   padding: 0.8rem 1.5rem;
   color: white;
+  display: inline-block;
   background-color: rgb(56, 52, 168);
   margin-right: 2rem;
   border-radius: 35px;
+  transition: transform 0.3s ease;
 }
-.hero .hero-btns .get-started-btn:hover {
+.hero .hero-btns a:hover {
   transform: scale(1.05);
 }
 .hero .hero-btns .play-btn {
+  padding: 0.8rem 0 1rem;
   color: rgb(56, 52, 168);
+  display: inline-block;
 }
 .hero .hero-btns .play-btn img {
   width: 3rem;
@@ -176,13 +178,14 @@ header .hero .badges p::before {
 }
 
 /* COMPANIES SECTION */
-.companies {
+header .companies {
+  padding: 2rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  height: 18vh;
+  height: auto;
   width: 100%;
   background-color: #f5f6f8;
 }
@@ -195,22 +198,6 @@ header .companies .comp-logos img {
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
-}
-
-@media (max-width: 962px) {
-  .hero h1 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-  }
-  header {
-    height: auto;
-  }
-  .comp-logos {
-    height: auto;
-  }
-  .comp-logos img {
-    width: 5rem;
-  }
 }
 
 h2 {
@@ -237,9 +224,11 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
 }
 .portfolio-track .section-header div {
-  max-width: 40%;
+  width: 40%;
 }
 .section-header .testimonial {
   width: 35%;
@@ -282,6 +271,10 @@ p {
   font-weight: 700;
 }
 
+.why-us {
+  color: rgb(56, 52, 168);
+}
+
 /* Track your payments */
 .track-payments {
   padding: 4rem;
@@ -290,9 +283,6 @@ p {
 }
 .track-payments img {
   width: 55%;
-}
-.track-payments p:nth-child(1) {
-  color: rgb(56, 52, 168);
 }
 .track-payments hr {
   margin: 2rem 0;
@@ -330,9 +320,6 @@ p {
 .save-money .save-money-img {
   width: 45%;
 }
-.save-money p:nth-child(1) {
-  color: rgb(56, 52, 168);
-}
 .save-money .testimonial {
   margin: 2rem 0;
   width: 100%;
@@ -342,15 +329,22 @@ p {
 .features {
   padding: 4rem;
   background-color: #c9e7f2;
+  position: relative;
+}
+.features-dec {
+  position: absolute;
+  bottom: 3rem;
+  left: -3rem;
 }
 .features .features-header p {
   max-width: 50%;
 }
 .features-cards {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
   margin-top: 2rem;
 }
 .features-cards .horizontal-cards {
@@ -358,47 +352,76 @@ p {
   justify-content: start;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 .horizontal-cards .features-card {
   border: 2px solid rgb(232, 234, 237);
   border-radius: 10px;
   background-color: white;
-  padding: 2rem;
-  width: 22rem;
+  padding: 1.5rem;
+  width: 19rem;
   height: 20rem;
 }
-.features-cards .verticle-cards {
+.vertical-cards {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+  max-width: 100%;
+  flex: 1 1 30%;
 }
-.features-cards .verticle-cards h3 {
+.vertical-cards h3 {
   background-color: white;
-  padding: 2rem;
+  padding: 1.5rem;
   border: 2px solid rgb(232, 234, 237);
   border-radius: 10px;
+  width: clamp(15rem, 80%, 28rem);
+  max-width: 100%;
 }
 
 /* TESTIMONIALS */
+.testimonials {
+  position: relative;
+}
+.testimonials-dec {
+  position: absolute;
+  top: 5rem;
+  right: 7rem;
+}
 .testimonials-header {
   padding: 4rem;
+  padding-bottom: 2rem;
 }
 .testimonials-header p {
   max-width: 53%;
 }
 .testimonials-content {
-  padding: 2rem 4rem;
+  padding: 1.5rem 0 2rem 4rem;
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 1rem;
+  gap: 1.4rem;
+  flex-shrink: 0;
+  overflow-x: scroll;
 }
 .testimonials-content .user-img {
-  width: 30%;
+  width: 50%;
 }
 .testimonials-content .testimonial {
   background-color: white;
+  min-width: 40rem;
+  height: 17rem;
   border: 2px solid rgb(232, 234, 237);
   display: flex;
+  gap: 1rem;
+}
+.testimonials-content::-webkit-scrollbar {
+  display: none;
+}
+.testimonials-content:hover {
+  scrollbar-width: thin;
+}
+.testimonials-content:hover::-webkit-scrollbar {
+  display: block;
 }
 .testimonials-content .testimonial p:nth-of-type(1) {
   font-size: 1.3rem;
@@ -448,9 +471,23 @@ p {
 .blogs .most-recent-blog {
   margin-top: 2rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   border-radius: 10px;
-  background-color: white;
+  /* height: 12rem; */
+  position: relative;
+  z-index: 1;
+}
+.blogs .most-recent-blog::after {
+  content: "";
+  background: url("../assets/blogs/blog1.png") no-repeat;
+  background-size: cover;
+  width: 35%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
 }
 .blogs .most-recent-blog .blog-content {
   width: 45%;
@@ -466,19 +503,51 @@ p {
 .blogs .other-blogs {
   margin-top: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 3rem;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 .blogs .other-blogs .other-blog {
   height: 23.5rem;
-  width: 35%;
+  width: 30%;
+  height: 24rem;
+  background-color: white;
   position: relative;
 }
-.blogs .other-blogs .other-blog img {
+
+.blogs .other-blogs .other-blog:nth-of-type(1)::after {
+  content: "";
+  display: block;
+  background: url("../assets/blogs/blog2.png") no-repeat;
+  background-size: cover;
+  height: 45%;
   width: 100%;
   position: absolute;
   bottom: 0;
+  left: 0;
+}
+.blogs .other-blogs .other-blog:nth-of-type(2)::after {
+  content: "";
+  display: block;
+  background: url("../assets/blogs/blog3.png") no-repeat;
+  background-size: cover;
+  height: 45%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.blogs .other-blogs .other-blog:nth-of-type(3)::after {
+  content: "";
+  display: block;
+  background: url("../assets/blogs/blog4.png") no-repeat;
+  background-size: cover;
+  height: 45%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 /* FAQs */
@@ -487,12 +556,12 @@ p {
 }
 .faqs .faqs-content {
   padding: 2rem;
+  padding-right: 4rem;
   height: 85vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  flex-wrap: wrap;
 }
 .faqs .faqs-content h3 {
   font-size: 1.15rem;
@@ -521,14 +590,10 @@ p {
 .more-faqs {
   background-color: white;
   width: 33%;
-  height: 80%;
+  height: auto;
   border: 2px solid rgb(232, 234, 237);
   border-radius: 10px;
   padding: 2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 }
 .more-faqs-content {
   width: 100%;
@@ -543,9 +608,13 @@ p {
   font-weight: 500;
 }
 .more-faqs-btn {
+  display: inline-block;
+  margin-top: 3rem;
+  width: 100%;
+  text-align: center;
   background-color: rgb(255, 127, 92);
   color: white;
-  padding: 1.1rem 4rem;
+  padding: 1.1rem;
 }
 
 /* CTA */
@@ -575,6 +644,7 @@ p {
 /* FOOTER */
 footer {
   padding: 4rem;
+  height: 100vh;
 }
 footer h3 {
   font-size: 1.2rem;
@@ -584,6 +654,7 @@ footer h3 {
   display: flex;
   justify-content: space-between;
   align-items: start;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 .footer-main .profile p {
@@ -603,7 +674,7 @@ footer h3 {
 .footer-main a:hover {
   text-decoration: underline;
 }
-.footer-main>div{
+.footer-main > div {
   max-width: 20%;
 }
 
@@ -626,6 +697,7 @@ footer h3 {
   padding: 1rem;
   background-color: rgb(237, 237, 255);
   border: none;
+  width: 100%;
 }
 .footer-main .subscribe label {
   background-color: rgb(56, 52, 168);
@@ -647,4 +719,32 @@ footer hr {
 }
 footer .copyright {
   text-align: center;
+}
+
+@media (max-width: 962px) {
+  body {
+    font-size: 0.75rem;
+  }
+  .hero-content {
+    width: auto;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+    line-height: 2.2rem;
+  }
+  h2 {
+    font-size: 2.2rem !important;
+    line-height: 2rem !important;
+  }
+  h3 {
+    font-size: 1rem !important;
+    line-height: 1rem !important;
+  }
+  header {
+    height: auto;
+  }
+
+  .track-payments img {
+    overflow: hidden;
+  }
 }
