@@ -276,7 +276,7 @@ p {
 
 /* Track your payments */
 .track-payments {
-  padding: 4rem;
+  padding: 2rem 4rem;
   display: flex;
   justify-content: space-around;
 }
@@ -308,16 +308,24 @@ p {
 
 /* SAVE MONEY */
 .save-money {
+  padding: 2rem 0 2rem 4rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   align-items: center;
-  padding: 4rem;
+  gap: 4rem;
 }
 .save-money-content {
   width: 45%;
 }
-.save-money .save-money-img {
-  width: 45%;
+.save-money .save-money-img{
+  width: 33%;
+  height: 28rem;
+}
+.save-money .save-money-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
 }
 .save-money .testimonial {
   margin: 2rem 0;
@@ -385,6 +393,7 @@ p {
   position: absolute;
   top: 5rem;
   right: 7rem;
+  z-index: -1;
 }
 .testimonials-header {
   padding: 4rem;
@@ -642,7 +651,7 @@ p {
 
 /* FOOTER */
 footer {
-  padding: 4rem;
+  padding: 2rem 4rem;
   height: 100vh;
 }
 footer h3 {
